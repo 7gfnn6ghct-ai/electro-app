@@ -3,46 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ТОО "ЭлектроБезопасность" — АСУ МКД</title>
+  <title>ТОО «ЭлектроБезопасность» — АСУ МКД</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Верхняя панель управления -->
+  <!-- Шапка системы -->
   <header class="top-bar">
-    <div class="brand-info">
-      <span class="logo-tag">ЭБ</span>
-      <div class="brand-titles">
+    <div class="brand-box">
+      <button id="sidebarToggle" class="mobile-toggle-btn">☰</button>
+      <div class="brand-logo">ЭБ</div>
+      <div class="brand-info">
         <strong>ТОО «ЭлектроБезопасность»</strong>
-        <small>Сервисная компания г. Рудный</small>
+        <small>г. Рудный • АСУ Жилым Фондом</small>
       </div>
     </div>
 
-    <div class="test-role-box">
-      <label for="roleSelect">🎭 Режим тестирования:</label>
-      <select id="roleSelect">
+    <!-- Переключатель тестового режима -->
+    <div class="test-panel">
+      <label for="roleSelector">🎭 Тестовый режим:</label>
+      <select id="roleSelector" class="role-select">
         <option value="director">👑 Директор</option>
         <option value="dispatcher">🎧 Диспетчер</option>
         <option value="worker">🛠 Мастер / Работник</option>
-        <option value="tenant">🏠 Жилец (Качарская 53)</option>
+        <option value="tenant">🏠 Жилец (Качарская, 53)</option>
       </select>
     </div>
   </header>
 
   <!-- Основной макет -->
-  <div class="app-layout">
-    <!-- Навигация -->
-    <nav class="nav-sidebar">
-      <button class="nav-item active" data-page="home">🏢 Объекты (18 МКД)</button>
-      <button class="nav-item" data-page="tickets">📋 Журнал заявок</button>
-      <button class="nav-item" data-page="accidents">⚠️ Аварии и отключения</button>
-      <button class="nav-item" data-page="workers">👷‍♂️ Персонал и смены</button>
-      <button class="nav-item" data-page="settings">⚙️ Настройки системы</button>
-    </nav>
+  <div class="main-wrapper">
+    <!-- Боковое меню (только для персонала) -->
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-menu">
+        <button class="nav-btn active" data-page="houses">
+          <span>🏢</span> Объекты (18 МКД)
+        </button>
+        <button class="nav-btn" data-page="tickets">
+          <span>📋</span> Журнал заявок
+        </button>
+        <button class="nav-btn" data-page="accidents">
+          <span>⚠️</span> Аварии и отключения
+        </button>
+        <button class="nav-btn" data-page="workers">
+          <span>👷‍♂️</span> Персонал и смены
+        </button>
+        <button class="nav-btn" data-page="settings">
+          <span>⚙️</span> Настройки системы
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <small>ТОО «ЭлектроБезопасность»<br>г. Рудный • 2026</small>
+      </div>
+    </aside>
 
     <!-- Основная рабочая область -->
-    <main id="app" class="content-area">
-      <!-- Сюда динамически генерируются все страницы -->
+    <main id="contentApp" class="content-viewport">
+      <!-- Динамический контент из app.js -->
     </main>
   </div>
 
