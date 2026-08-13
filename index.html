@@ -1,53 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ТОО «ЭлектроБезопасность» — Управление МЖД</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТОО "ЭлектроБезопасность" — Сервисная компания</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="app">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="logo">ЭБ</div>
-      <div><strong>ЭлектроБезопасность</strong><span>г. Рудный</span></div>
-    </div>
-    
-    <!-- Переключатель ролей для тестирования -->
-    <div class="role-box">
-      <label class="muted" style="font-size:10px; color:#9ca3af;">Тестовая роль:</label>
-      <select id="roleSelect" class="select-role">
-        <option value="director">👑 Директор</option>
-        <option value="dispatcher">🎧 Диспетчер</option>
-        <option value="master">👷 Мастер</option>
-        <option value="worker">🛠 Работник</option>
-        <option value="tenant">🏠 Жилец</option>
-      </select>
-    </div>
-
-    <nav id="mainNav"></nav>
-
-    <div class="sidebar-bottom">
-      <button class="nav" data-view="test" onclick="nav('test')">🧪 <span>Песочница</span></button>
-      <button class="nav" data-view="settings" onclick="nav('settings')">⚙ <span>Настройки</span></button>
-    </div>
-  </aside>
-
-  <main class="main">
-    <header class="topbar">
-      <div>
-        <div class="crumb">ТОО «ЭлектроБезопасность» — Сервисная компания</div>
-        <h1 id="pageTitle">Главная</h1>
+  <div class="app-container">
+    <!-- Боковая панель -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="logo">ЭБ</div>
+        <div class="brand-text">
+          <strong>ЭлектроБезопасность</strong>
+          <span>Сервисная компания</span>
+        </div>
+        <button class="close-sidebar-btn" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
       </div>
-      <div class="top-actions">
-        <button class="icon-btn" title="Аварийные контакты" onclick="nav('emergency')">📞</button>
-        <div class="user">Олег Викторович <small>Директор</small></div>
+
+      <nav class="nav-menu">
+        <button class="nav-btn active" data-page="home"><i class="fas fa-building"></i> <span>Главная / Объекты</span></button>
+        <button class="nav-btn" data-page="tickets"><i class="fas fa-tasks"></i> <span>Журнал заявок</span></button>
+        <button class="nav-btn" data-page="accidents"><i class="fas fa-exclamation-triangle"></i> <span>Аварии и отключения</span></button>
+        <button class="nav-btn" data-page="my-tasks" id="myTasksBtn"><i class="fas fa-tools"></i> <span>Мои задания</span></button>
+        <button class="nav-btn" data-page="contacts"><i class="fas fa-phone-alt"></i> <span>Контакты / Диспетчер</span></button>
+      </nav>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+      <!-- Мобильная шапка -->
+      <header class="top-bar">
+        <button class="menu-toggle-btn" id="menuToggleBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="role-selector-wrapper">
+          <label for="roleSelect"><i class="fas fa-user-circle"></i> Кабинет:</label>
+          <select id="roleSelect" class="role-select">
+            <option value="director">👑 Директор</option>
+            <option value="dispatcher">🎧 Диспетчер</option>
+            <option value="worker">🛠 Работник (Слесарь/Электрик)</option>
+            <option value="tenant">🏠 Жилец</option>
+          </select>
+        </div>
+      </header>
+
+      <!-- Динамические страницы -->
+      <div id="pageContainer" class="page-container">
+        <!-- Контент подгружается через app.js -->
       </div>
-    </header>
-    <section id="content"></section>
-  </main>
-</div>
-<script src="app.js"></script>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
