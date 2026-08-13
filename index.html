@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ТОО «ЭлектроБезопасность» — Управление МЖД</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">ЭБ</div>
+      <div><strong>ЭлектроБезопасность</strong><span>г. Рудный</span></div>
+    </div>
+    
+    <!-- Переключатель ролей для тестирования -->
+    <div class="role-box">
+      <label class="muted" style="font-size:10px; color:#9ca3af;">Тестовая роль:</label>
+      <select id="roleSelect" class="select-role">
+        <option value="director">👑 Директор</option>
+        <option value="dispatcher">🎧 Диспетчер</option>
+        <option value="master">👷 Мастер</option>
+        <option value="worker">🛠 Работник</option>
+        <option value="tenant">🏠 Жилец</option>
+      </select>
+    </div>
+
+    <nav id="mainNav"></nav>
+
+    <div class="sidebar-bottom">
+      <button class="nav" data-view="test" onclick="nav('test')">🧪 <span>Песочница</span></button>
+      <button class="nav" data-view="settings" onclick="nav('settings')">⚙ <span>Настройки</span></button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="crumb">ТОО «ЭлектроБезопасность» — Сервисная компания</div>
+        <h1 id="pageTitle">Главная</h1>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn" title="Аварийные контакты" onclick="nav('emergency')">📞</button>
+        <div class="user">Олег Викторович <small>Директор</small></div>
+      </div>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
