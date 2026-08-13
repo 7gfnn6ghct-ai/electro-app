@@ -7,44 +7,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-container">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="logo">ЭБ</div>
-        <div class="brand-text">
-          <strong>ЭлектроБезопасность</strong>
-          <span>Сервисная компания</span>
-        </div>
-        <button class="close-sidebar-btn" id="closeSidebarBtn">✕</button>
-      </div>
 
-      <nav class="nav-menu">
-        <button class="nav-btn active" data-page="home">🏢 Главная / Объекты</button>
-        <button class="nav-btn" data-page="tickets">📋 Журнал заявок</button>
-        <button class="nav-btn" data-page="accidents">⚠️ Аварии и отключения</button>
-        <button class="nav-btn" data-page="my-tasks">🛠 Мои задания</button>
-        <button class="nav-btn" data-page="contacts">📞 Диспетчер</button>
-      </nav>
-    </aside>
+  <!-- Верхняя шапка с выбором роли -->
+  <header class="top-bar">
+    <div class="logo-box">
+      <strong>ЭБ</strong>
+    </div>
+    <div class="role-box">
+      <label for="roleSelect">Кабинет:</label>
+      <select id="roleSelect">
+        <option value="director">👑 Директор</option>
+        <option value="dispatcher">🎧 Диспетчер</option>
+        <option value="worker">🛠 Работник</option>
+        <option value="tenant">🏠 Жилец</option>
+      </select>
+    </div>
+  </header>
 
-    <main class="main-content">
-      <header class="top-bar">
-        <button class="menu-toggle-btn" id="menuToggleBtn">☰</button>
-        
-        <div class="role-selector-wrapper">
-          <label for="roleSelect">Кабинет:</label>
-          <select id="roleSelect" class="role-select">
-            <option value="director">👑 Директор</option>
-            <option value="dispatcher">🎧 Диспетчер</option>
-            <option value="worker">🛠 Работник</option>
-            <option value="tenant">🏠 Жилец</option>
-          </select>
-        </div>
-      </header>
-
-      <div id="pageContainer" class="page-container"></div>
-    </main>
-  </div>
+  <!-- Основная область с содержимым -->
+  <main id="app" class="main-container">
+    <!-- Сюда подгрузится интерфейс -->
+  </main>
 
   <script src="app.js"></script>
 </body>
