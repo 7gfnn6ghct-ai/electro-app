@@ -3,31 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ТОО "ЭлектроБезопасность"</title>
+  <title>ТОО "ЭлектроБезопасность" — АСУ МКД</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Верхняя шапка с выбором роли -->
+  <!-- Верхняя панель управления -->
   <header class="top-bar">
-    <div class="logo-box">
-      <strong>ЭБ</strong>
+    <div class="brand-info">
+      <span class="logo-tag">ЭБ</span>
+      <div class="brand-titles">
+        <strong>ТОО «ЭлектроБезопасность»</strong>
+        <small>Сервисная компания г. Рудный</small>
+      </div>
     </div>
-    <div class="role-box">
-      <label for="roleSelect">Кабинет:</label>
+
+    <div class="test-role-box">
+      <label for="roleSelect">🎭 Режим тестирования:</label>
       <select id="roleSelect">
         <option value="director">👑 Директор</option>
         <option value="dispatcher">🎧 Диспетчер</option>
-        <option value="worker">🛠 Работник</option>
-        <option value="tenant">🏠 Жилец</option>
+        <option value="worker">🛠 Мастер / Работник</option>
+        <option value="tenant">🏠 Жилец (Качарская 53)</option>
       </select>
     </div>
   </header>
 
-  <!-- Основная область с содержимым -->
-  <main id="app" class="main-container">
-    <!-- Сюда подгрузится интерфейс -->
-  </main>
+  <!-- Основной макет -->
+  <div class="app-layout">
+    <!-- Навигация -->
+    <nav class="nav-sidebar">
+      <button class="nav-item active" data-page="home">🏢 Объекты (18 МКД)</button>
+      <button class="nav-item" data-page="tickets">📋 Журнал заявок</button>
+      <button class="nav-item" data-page="accidents">⚠️ Аварии и отключения</button>
+      <button class="nav-item" data-page="workers">👷‍♂️ Персонал и смены</button>
+      <button class="nav-item" data-page="settings">⚙️ Настройки системы</button>
+    </nav>
+
+    <!-- Основная рабочая область -->
+    <main id="app" class="content-area">
+      <!-- Сюда динамически генерируются все страницы -->
+    </main>
+  </div>
 
   <script src="app.js"></script>
 </body>
