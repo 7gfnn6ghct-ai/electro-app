@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ТОО "ЭлектроБезопасность" — Сервисная компания</title>
+  <title>ТОО "ЭлектроБезопасность"</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="app-container">
-    <!-- Боковая панель -->
     <aside class="sidebar" id="sidebar">
       <div class="brand">
         <div class="logo">ЭБ</div>
@@ -17,41 +15,34 @@
           <strong>ЭлектроБезопасность</strong>
           <span>Сервисная компания</span>
         </div>
-        <button class="close-sidebar-btn" id="closeSidebarBtn"><i class="fas fa-times"></i></button>
+        <button class="close-sidebar-btn" id="closeSidebarBtn">✕</button>
       </div>
 
       <nav class="nav-menu">
-        <button class="nav-btn active" data-page="home"><i class="fas fa-building"></i> <span>Главная / Объекты</span></button>
-        <button class="nav-btn" data-page="tickets"><i class="fas fa-tasks"></i> <span>Журнал заявок</span></button>
-        <button class="nav-btn" data-page="accidents"><i class="fas fa-exclamation-triangle"></i> <span>Аварии и отключения</span></button>
-        <button class="nav-btn" data-page="my-tasks" id="myTasksBtn"><i class="fas fa-tools"></i> <span>Мои задания</span></button>
-        <button class="nav-btn" data-page="contacts"><i class="fas fa-phone-alt"></i> <span>Контакты / Диспетчер</span></button>
+        <button class="nav-btn active" data-page="home">🏢 Главная / Объекты</button>
+        <button class="nav-btn" data-page="tickets">📋 Журнал заявок</button>
+        <button class="nav-btn" data-page="accidents">⚠️ Аварии и отключения</button>
+        <button class="nav-btn" data-page="my-tasks">🛠 Мои задания</button>
+        <button class="nav-btn" data-page="contacts">📞 Диспетчер</button>
       </nav>
     </aside>
 
-    <!-- Основной контент -->
     <main class="main-content">
-      <!-- Мобильная шапка -->
       <header class="top-bar">
-        <button class="menu-toggle-btn" id="menuToggleBtn">
-          <i class="fas fa-bars"></i>
-        </button>
+        <button class="menu-toggle-btn" id="menuToggleBtn">☰</button>
         
         <div class="role-selector-wrapper">
-          <label for="roleSelect"><i class="fas fa-user-circle"></i> Кабинет:</label>
+          <label for="roleSelect">Кабинет:</label>
           <select id="roleSelect" class="role-select">
             <option value="director">👑 Директор</option>
             <option value="dispatcher">🎧 Диспетчер</option>
-            <option value="worker">🛠 Работник (Слесарь/Электрик)</option>
+            <option value="worker">🛠 Работник</option>
             <option value="tenant">🏠 Жилец</option>
           </select>
         </div>
       </header>
 
-      <!-- Динамические страницы -->
-      <div id="pageContainer" class="page-container">
-        <!-- Контент подгружается через app.js -->
-      </div>
+      <div id="pageContainer" class="page-container"></div>
     </main>
   </div>
 
